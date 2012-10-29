@@ -1,0 +1,32 @@
+Modelar una maquina de cafe. La maquina puede estar habilitada o fuera de servicio. Si todo esta bien y la maquina esta habilitada, 
+puede preparar distintas bebidas a pedido del usuario (cafe con leche, cafe, expreso, largo, chocolate y otros). 
+Si esta fuera de servicio y se ingresan monedas, la maquina las devuelve avisando que esta fuera de servicio y por supuesto no sumandolas al saldo.
+La forma en la que la maquina funciona cuando esta habilitada es la siguiente:
+
+- La maquina recibe las monedas hasta el precio fijado. Todas las bebidas tienen el mismo precio y ese precio se configura en la maquina.
+- El usuario selecciona la bebida. Cada bebida esta identificada por un numero. Asi, se puede seleccionar la bebida numero 1 que es cafe con leche. 
+- El usuario puede consultar el saldo que lleva acumulado en monedas hasta el momento (si la bebida sale $3 quisiera poder consultar que ingrese $2 y me falta ingresar $1 mas)
+- La maquina de cafe tiene una cantidad de vasitos adentro. La maquina antes de iniciar el proceso de dispensar la bebida, verifica que quede al menos 1 vasito. Si no quedan vasitos, 
+devuelve las monedas y se pone "fuera de servicio". Si esto ocurre tiene que venir un operador de mantenimiento para volver a recargar vasitos y habilitarla de nuevo 
+(el de mantenimiento puede espontaneamente tambien pasarla a fuera de servicio).
+- La maquina de cafe cuenta con los siguientes ingredientes para preparar cualquiera de las bebidas que hay y las vendran. La maquina nunca se queda sin ingredientes (gran avance de la tecnologia). 
+ De forma general, la maquina dispensa cualquier bebida de la siguiente manera: 
+ 1) Traba la puertita de plastico 
+ 2) pone el vaso
+ 3) prepara la bebida, mezclando de entre los ingredientes disponibles, segun haya sido la bebida seleccionada. 
+ 4) La sirve en el vasito
+ 5) Pone la cucharita en el vasito (si no quedan cucharitas, matanga y sigue funcionando...).
+ 6) Destraba la puerta
+La maquina de cafe cuenta y contara con los siguientes ingredientes: azucar, leche, agua, cafe y chocolate
+
+Recordemos que cada bebida esta identificada por un numero (es el codigo) que el usuario selecciona indicandonos que quiere tomar. Seria deseable dejar encapsulada la logica de tal manera de que 
+cuando se agreguen nuevos tipos de bebidas (recordemos que seria bebidas que tienen que poder armarse con los ingredientes que nos brinda la maquina) no tengamos que modificar a la maquina de cafe (que ya bastante logica tiene).
+
+Para probar su modelo y su implementacion les propongo lo siguiente:
+
+Hagan un main con los siguientes casos para comprobar que sus disenos cumplen con los requerimientos:
+1) Creen una maquina, ponganla "fuera de servicio" e ingresenle monedas. Verifiquen que se las devolvio y que el saldo sigue siendo $0
+2) Creen una maquina, carguenle cero vasos. Ingresen monedas hasta sumar el precio de las bebidas y seleccionen verificando que la maquina 
+les devuelve las monedas y queda fuera de servicio.
+3) Prueben crear una nueva bebida, por ejemplo "Lagrima" que es basicamente pura leche y una gota de cafe y prueben que tantos cambios tienen que realizar. 
+Si tienen que crear o modificar mas de 2 clases.... huele feo...
